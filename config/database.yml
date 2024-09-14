@@ -24,12 +24,12 @@ default: &default
 development:
   <<: *default
 
-  database: rails_learning_base_development
+  database: rails_sidekiq_csv_to_db_development
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: rails_learning_base
+  #username: rails_sidekiq_csv_to_db
 
   # The password associated with the PostgreSQL role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: rails_learning_base_test
+  database: rails_sidekiq_csv_to_db_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: rails_learning_base_production
-  username: rails_learning_base
+  database: rails_sidekiq_csv_to_db_production
+  username: rails_sidekiq_csv_to_db
   password: <%= ENV["RAILS_LEARNING_BASE_DATABASE_PASSWORD"] %>
