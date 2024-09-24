@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   resources :ebooks do
     collection do
@@ -8,4 +10,6 @@ Rails.application.routes.draw do
     end
   end
   root "home#index"
+
+  mount Sidekiq::Web => "/sidekiq"
 end
