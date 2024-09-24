@@ -5,6 +5,7 @@ source "https://rubygems.org"
 ruby "3.3.3"
 
 gem "bootsnap", require: false
+gem "csv", "~> 3.3"
 gem "importmap-rails"
 gem "jbuilder"
 gem "kaminari", "~> 1.2", ">= 1.2.2"
