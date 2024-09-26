@@ -61,7 +61,9 @@ class EbooksController < ApplicationController
 
   def import_csv
     if params[:csv_file].present?
-      Ebooks::ImportService.call(csv_path: params[:csv_file].path)
+      csv_path = Ebooks::CsvUploaderService.call(params[:csv_file])
+      Ebooks::ImportCsvJob.perform_async(csv_path)
+
       redirect_to ebooks_path, notice: "CSV file is being imported."
     else
       redirect_to import_ebooks_path, notice: "Please select a CSV file."
