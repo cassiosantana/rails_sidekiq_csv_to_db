@@ -1,0 +1,9 @@
+<%= form_with url: import_csv_ebooks_path, method: :post, local: true, html: { multipart: true } do |form| %>
+  <div class="mb-4">
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
+    <%= form.file_field :csv_file, class: 'block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400', id: 'file_input' %>
+  </div>
+  <div class="flex justify-end">
+    <%= form.submit 'Import CSV', class: 'px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50' %>
+  </div>
+<% end %>
